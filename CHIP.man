@@ -1,0 +1,72 @@
+.\" CHIP.man
+
+
+.TH man 1 "1. April 2016" "1.0" "CHIP Man Page"
+
+
+.SH NAME
+CHIP
+
+.SH SYNOPSIS
+.B CHIP-Test
+[ [<Pfad>/]<Eingabe-Bilddatei> (...) ]
+
+.SH DESCRIPTION
+Hexagonal Image Processing Framework in C
+
+
+.SH OPTIONS
+
+.IP <title>
+Beschriftung Ausgaben
+
+.IP <order=(1-7)>
+Ordnung Hexarray
+
+.IP <mode=(0-3)>
+Bilineare | bikubische | Lanczos- | B-Spline-Interpolation (B_3)
+
+.IP <radius=(>0.0f)>
+Radius Rücktransformation
+
+.IP <threads=(>0)>
+# Pthreads Rücktransformation
+
+.IP <DCT_N=(0|2|5)>
+DCT - Makroblockgröße:
+.B DCT deaktiviert
+| Ordnung 1 | Ordnung 2
+
+.IP <DCT_mode=(0-5)>
+HDCT | DCTH
+.B (nur für N = 5)
+| Logspace-1D-DCTH | 1D-DCTH -
+ exp. Quantisierung | - lin. | - konst.
+
+.IP <quant_qf=(1-99)>
+Qualitätsfaktor Quantisierung
+
+.IP <filter=(0-6)>
+Filter: Blurring- | Unblurring- | Low- | High-pass filters
+ (4: 0°, 120°, 240°, (0° + 120° + 240°) / 3)
+
+.IP <scale=(0|4)>
+Skalierung: Herunterskalierung nach HIP - eine Version | - sieben Versionen |
+ Herunterskalierung mittels Durchschnittsbildung | Hochskalierung mittels Übertragung
+
+
+.SH EXAMPLE
+ ./CHIP-Test Tests/Testset/Lena_cropped.bmp Lena 5 1 1.0 1 5 3 90 0 0
+
+.SH SEE ALSO
+.B dcrawHMod(1), Hex-Muxer(1), Hex-Player(1), HMEC(1), Nexys-Video-HDMIHMod(1), x264HMod(1)
+
+.SH BUGS
+-
+
+.SH AUTHOR
+Tobias Schlosser (tobias.schlosser@informatik.tu-chemnitz.de)
+
+.SH COPYING
+Siehe Datei "COPYING"
+

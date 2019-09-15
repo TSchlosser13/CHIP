@@ -1,0 +1,11 @@
+# _Testset.txt
+
+
+# http://sipi.usc.edu/database/database.php?volume=misc
+
+
+convert ${img}.bmp -resize 305x305^ -gravity center -crop 305x297+0+0 ${img}_cropped.bmp
+
+convert Baboon.bmp -resize 305x305^ -gravity center -crop 305x297+0+0 Baboon_cropped.bmp
+convert Lena.bmp   -resize 305x305^ -gravity center -crop 305x297+0+0 Lena_cropped.bmp
+convert Pepper.bmp -resize 305x305^ -gravity center -crop 305x297+0+0 Pepper_cropped.bmp
